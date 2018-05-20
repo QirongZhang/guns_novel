@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stylefeng.guns.modular.system.dao.ChapterMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.modular.system.model.Chapter">
+        <id column="chapter_id" property="chapterId"/>
+        <result column="novel_id" property="novelId"/>
+        <result column="chapter_name" property="chapterName"/>
+        <result column="chapter_content" property="chapterContent"/>
+        <result column="word_count" property="wordCount"/>
+        <result column="ord_by" property="ordBy"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remarks" property="remarks"/>
+        <result column="del_flag" property="delFlag"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        chapter_id AS chapterId, novel_id AS novelId, chapter_name AS chapterName, chapter_content AS chapterContent, word_count AS wordCount, ord_by AS ordBy, create_by AS createBy, create_time AS createTime, update_by AS updateBy, update_time AS updateTime, remarks, del_flag AS delFlag
+    </sql>
+
+    <select id="selectChapterNames" resultType="map">
+        select
+            chapter_id AS "chapterId",
+            chapter_name AS "chapterName"
+        from bus_chapter
+        where novel_id = #{novelId}
+        ORDER BY ord_by ASC
+    </select>
+
+</mapper>

@@ -1,0 +1,44 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="novelId" value="${item.novelId}">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="novelId" name="小说编码" value="${item.novelId}" underline="true"/>-->
+                            <#input id="novelName" name="小说名称" value="${item.novelName}" underline="true"/>
+                            <!--<#input id="author" name="作者" value="${item.author}" underline="true"/>-->
+                            <#input id="introduction" name="简介" value="${item.introduction}" underline="true"/>
+                            <#input id="novelPic" name="图片地址" value="${item.novelPic}" underline="true"/>
+                            <!--<#input id="clickRate" name="点击量" value="${item.clickRate}" underline="true"/>-->
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="categoryId" name="类别编码" value="${item.categoryId}" underline="true"/>
+                            <!--<#input id="createBy" name="创建者" value="${item.createBy}" underline="true"/>
+                            <#input id="createTime" name="创建时间" value="${item.createTime}" underline="true"/>
+                            <#input id="updateBy" name="更新者" value="${item.updateBy}" underline="true"/>
+                            <#input id="updateTime" name="更新时间" value="${item.updateTime}" underline="true"/>-->
+                            <#select id="state" name="状态" underline="true">
+                                <option value="连载中">连载中</option>
+                                <option value="完本">完本</option>
+                            </#select>
+                            <#input id="remarks" name="备注" value="${item.remarks}" underline="true"/>
+                            <!--<#input id="delFlag" name="删除标记" value="${item.delFlag}" />-->
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="NovelInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="NovelInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/business/novel/novel_info.js"></script>
+@}

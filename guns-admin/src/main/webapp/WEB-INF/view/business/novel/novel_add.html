@@ -1,0 +1,55 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="id" value="">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <!--<#input id="novelId" name="小说编码" underline="true"/>-->
+                            <#input id="novelName" name="小说名称" underline="true"/>
+                            <!--<#input id="author" name="作者" underline="true"/>-->
+                            <#input id="introduction" name="简介" underline="true"/>
+                            <#input id="novelPic" name="图片地址" underline="true"/>
+                            <!--<#input id="clickRate" name="点击量" underline="true"/>-->
+
+                </div>
+
+                <div class="col-sm-6">
+                            <!--<#input id="categoryId" name="类别编码" underline="true"/>-->
+                            <#select id="categoryId" name="类别" underline="true">
+                                <option value="1">玄幻奇幻</option>
+                                <option value="2">武侠修真</option>
+                                <option value="3">言情都市</option>
+                                <option value="4">历史穿越</option>
+                                <option value="5">网游动漫</option>
+                                <option value="6">科幻小说</option>
+                                <option value="7">恐怖灵异</option>
+                                <option value="8">其他类型</option>
+                            </#select>
+                            <!--<#input id="createBy" name="创建者" underline="true"/>-->
+                            <!--<#input id="createTime" name="创建时间" underline="true"/>-->
+                            <!--<#input id="updateBy" name="更新者" underline="true"/>
+                            <#input id="updateTime" name="更新时间" underline="true"/>-->
+                            <#select id="state" name="状态" underline="true">
+                                <option value="连载中">连载中</option>
+                                <option value="完本">完本</option>
+                            </#select>
+                            <#input id="remarks" name="备注" underline="true"/>
+                            <!--<#input id="delFlag" name="删除标记" underline="true"/>-->
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="NovelInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="NovelInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/business/novel/novel_info.js"></script>
+@}

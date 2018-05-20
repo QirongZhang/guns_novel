@@ -1,0 +1,39 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <input type="hidden" id="chapterId" value="${item.chapterId}">
+            <input type="hidden" id="chapterContent">
+
+            <div class="row">
+                <div class="col-sm-12 b-r">
+                            <!--<#input id="chapterId" name="章节编码" value="${item.chapterId}" underline="true"/>
+                            <#input id="novelId" name="小说编码" value="${item.novelId}" underline="true"/>-->
+                            <#input id="chapterName" name="章节名" value="${item.chapterName}" underline="true"/>
+                            <#input id="chapterContent" name="章节内容" value="${item.chapterContent}" underline="true"/>
+                            <!--<#input id="wordCount" name="字数" value="${item.wordCount}" underline="true"/>
+                            <#input id="createBy" name="创建者" value="${item.createBy}" />-->
+                </div>
+
+                <!--<div class="col-sm-6">
+                            <#input id="createTime" name="创建时间" value="${item.createTime}" underline="true"/>
+                            <#input id="updateBy" name="修改者" value="${item.updateBy}" underline="true"/>
+                            <#input id="updateTime" name="修改时间" value="${item.updateTime}" underline="true"/>
+                            <#input id="remarks" name="备注" value="${item.remarks}" underline="true"/>
+                            <#input id="delFlag" name="删除标记" value="${item.delFlag}" />
+                </div>-->
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="ChapterInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ChapterInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/business/chapter/chapter_info.js"></script>
+@}
